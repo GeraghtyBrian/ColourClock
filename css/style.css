@@ -1,0 +1,179 @@
+body{
+  background-size:cover;
+  background-repeat: no-repeat;
+  /**/
+}
+
+.font-lato{
+  font-family: 'Lato', sans-serif;
+}
+
+.font-BreeSerif{
+  font-family: 'Bree Serif', serif;
+}
+
+.font-Slabo{
+  font-family: 'Slabo 27px', serif;
+}
+
+.font-Poiretone{
+  font-family: 'Poiret One', cursive;
+}
+
+
+
+
+header{
+  position:absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  width: 100%;
+  height:350px;
+  background-color:rgba(44, 62, 80,0.8);
+  font-size: 16px;
+  padding: 20px;
+}
+
+header p {
+  color: #fff;
+}
+
+header button{
+  margin-top: 10px;
+  width:100%;
+}
+
+header h1{
+  colour:#fff;
+  text-align: center;
+  font-size: 60px;
+}
+
+header fa{
+  text-align: center;
+}
+
+#drop-toggle{
+  position: fixed;
+  top:5px;
+  right: 5px;
+  z-index: 3;
+  color: #fff;
+}
+
+#drop-toggle:hover{
+  cursor: pointer;
+}
+
+.header-left{
+  width: 33%;
+  float: left;
+  padding-right: 20px;
+}
+.header-centre{
+  line-height: 175px;
+  width:33%;
+  float: left;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  padding:20px;
+  height: 100%;
+  padding: 0px 20px;
+}
+.header-right{
+  float: left;
+  width: 33%;
+  padding-left:20px;
+}
+
+.toggle-arrow{
+  position: absolute;
+  right:5px;
+  top: 5px;
+  z-index: 0;
+}
+
+/*Time Styling*/
+/*--Default
+*/
+.time-block{
+  padding: 0px 20px;
+  position:relative;
+  width:100%;
+  height:100vh;
+  float:left;
+  color: rgba(255,255,255,0.9);
+  text-shadow: 2px 2px 2px rgba(52, 73, 94,1.0);
+}
+
+.time-digits{
+  width: 6%;
+  display: inline-block;
+  height:70vh;
+}
+
+.time-digits h1{
+  line-height: 70vh;
+  font-size: 180px;
+}
+
+
+.time-left{
+  width: 100%;
+  float: :left;
+}
+
+.time-centre{
+  text-align: center;
+  width:100%;
+  margin: auto;
+}
+
+.time-right{
+  width:100%;
+  text-align: right;
+  float: right;
+}
+
+.time-digits{
+  -webkit-animation-duration: 1s;
+}
+
+.time-colon{
+  color: rgba(52, 73, 94,.8);
+}
+
+.date-box{
+  width: auto;
+  border-top: 1px solid #fff;
+}
+
+.date-digits{
+  display: inline;
+  font-size: 60px;
+}
+
+
+/*Media querries*/
+@media(max-width: 1280px){
+  .time-digits{
+    width: 12%;
+    font-size: 160px;
+    line-height: 70vh;
+  }
+  .date-digits{
+    font-size: 40px;
+  }
+}
+
+@media(max-width: 768px){
+  .time-digits{
+    width: 12%;
+    font-size: 50px;
+    line-height: 70vh;
+  }
+  .date-digits{
+    font-size: 40px;
+  }
+}

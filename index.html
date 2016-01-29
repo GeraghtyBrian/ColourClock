@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+<body>
+    <div class="time-block">
+        <div id="clockAllign" class="">
+            <div id="hour1" class="time-digits animated"></div>
+            <div id="hour2" class="time-digits animated"></div>
+            <div class="time-digits"><h1 class="time-colon">:</h1></div>
+            <div id="min1" class="time-digits animated"></div>
+            <div id="min2" class="time-digits animated"></div>
+            <div class="time-digits"><h1 class="time-colon">:</h1></div>
+            <div id="sec1" class="time-digits animated"></div>
+            <div id="sec2" class="time-digits animated"></div>
+            <div class="date-box">
+                <div id="dateDL" class="date-digits"></div>
+                <div id="dateD" class="date-digits"></div>
+                <div id="dateM" class="date-digits"></div>
+            </div>
+        </div>
+        <header id="head">
+            <div class="header-left">
+                <div class="form-group">
+                    <p>Allign Clock</p>
+                    <select id="setting-allign"  class="form-Control">
+                       <option selected="selected" value="time-left">Left</option>
+                       <option value="time-centre">Centre (Default)</option>
+                       <option value="time-right">Right</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                <p>Select Font</p>
+                <select id="setting-font-family"  class="form-Control">
+                   <option selected="selected" value="font-lato">Lato (Default)</option>
+                   <option value="font-BreeSerif">Bree Serif</option>
+                   <option value="font-Slabo">Slabo</option>
+                   <option value="font-Poiretone">Poiret One</option>
+                </select>
+                </div>
+                <div class="form-group">
+                <p>Select Animation</p>
+                <select id="setting-animation"  class="form-Control">
+                    <option value="">None</option>
+                    <option selected="selected" value="flipInX">Flip In X (Default)</option>
+                    <option value="fadeIn">Fade In</option>
+                    <option value="tada">Tada</option>
+                    <option value="zoomIn">Zoom In</option>
+                </select>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-warning" onclick="saveSettings()">Save</button>
+                </div>
+            </div>
+            <div class="header-centre">
+                <h1>Colour Clock</h1>
+                <hr/>
+                <h1><i class="fa fa-clock-o fa-2x"></i></h1>
+            </div>
+            <div class="header-right">
+                <p><i class="fa fa-check-circle-o"></i> Font Awsome</p>
+                <p><i class="fa fa-check-circle-o"></i> Animate.css</p>
+                <p><i class="fa fa-check-circle-o"></i> Bootstrap</p>
+                <p><i class="fa fa-check-circle-o"></i> Unsplash</p>
+            </div>
+        </header>
+        
+        <i id="drop-toggle" class="fa fa-cog fa-3x toggle-arrow"></i>
+        
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
