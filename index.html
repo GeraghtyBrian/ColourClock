@@ -13,6 +13,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
     
 </head>
@@ -22,14 +23,15 @@
         <div id="clockAllign">
             <div id="hour1" class="time-digits animated"></div>
             <div id="hour2" class="time-digits animated"></div>
-            <div class="time-digits"><h1 class="time-colon">:</h1></div>
+            <div class="time-digits"><h1 class="time-colon"> : </h1></div>
             <div id="min1" class="time-digits animated"></div>
             <div id="min2" class="time-digits animated"></div>
-            <div class="time-digits"><h1 class="time-colon">:</h1></div>
+            <div class="time-digits"><h1 class="time-colon"> : </h1></div>
             <div id="sec1" class="time-digits animated"></div>
             <div id="sec2" class="time-digits animated"></div>
             <div class="date-box">
                 <div id="dateDL" class="date-digits"></div>
+                <div class="date-digits"><span class="date-divide"> | </span></div>
                 <div id="dateD" class="date-digits"></div>
                 <div id="dateM" class="date-digits"></div>
             </div>
@@ -38,7 +40,7 @@
             <div class="header-left">
                 <div class="header-left-column1">
                     <div class="form-group">
-                        <p>Allign Clock</p>
+                        <p>Select Alignment</p>
                         <select id="setting-allign"  class="form-Control">
                            <option selected="selected" value="time-left">Left</option>
                            <option value="time-centre">Centre (Default)</option>
@@ -52,6 +54,7 @@
                            <option value="font-BreeSerif">Bree Serif</option>
                            <option value="font-Slabo">Slabo</option>
                            <option value="font-Poiretone">Poiret One</option>
+                           <option value="font-Montserrat">Montserrat</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -69,9 +72,9 @@
                     <div class="form-group">
                         <p>Select Theme</p>
                         <select id="setting-theme-colour"  class="form-Control">
-                            <option selected="selected" value="background-setting-wetasphalt">Wet Asphalt (Default)</option>
+                            <option value="background-setting-wetasphalt">Wet Asphalt</option>
                             <option value="background-setting-Alizarin">Alizarin</option>
-                            <option value="background-setting-Turquoise">Turquoise</option>
+                            <option selected="selected" value="background-setting-Turquoise">Turquoise (Default)</option>
                             <option value="background-setting-Pumpkin">Pumpkin</option>
                             <option value="background-setting-PeterRiver">Peter River</option>
                         </select>
@@ -84,6 +87,11 @@
                             <option value="Space">Space</option>                            
                         </select>
                     </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                          <label><input id="reset" type="checkbox" value="">Reset Defaults</label>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-warning" onclick="saveSettings()">Save</button>
@@ -92,17 +100,26 @@
             <div class="header-centre">
                 <h1>Colour Clock</h1>
                 <hr/>
-                <h1><i class="fa fa-clock-o fa-2x"></i></h1>
+                <h1><i class="fa fa-smile-o fa-2x"></i></h1>
             </div>
             <div class="header-right">
-                <p><i class="fa fa-check-circle-o"></i> Font Awsome</p>
-                <p><i class="fa fa-check-circle-o"></i> Animate.css</p>
-                <p><i class="fa fa-check-circle-o"></i> Bootstrap</p>
-                <p><i class="fa fa-check-circle-o"></i> Unsplash</p>
+                <div class="header-right-column1">
+                    <p><a href="http://fontawesome.io/"><i class="fa fa-heart"></i> Font Awsome</a></p>
+                    <p><a href="https://daneden.github.io/animate.css/"><i class="fa fa-heart"></i> Animate.css</a></p>
+                    <p><a href="http://getbootstrap.com/"><i class="fa fa-heart"></i> Bootstrap</a></p>
+                    <p><a href="https://unsplash.com/"><i class="fa fa-heart"></i> Unsplash</a></p>
+                </div>
+                <div class="header-right-column2">
+                    <p><a href="http://briangeraghty.me/#/"><i class="fa fa-link"></i> Contact Me</a>
+                    |
+                    <a href="https://github.com/GeraghtyBrian/ColourClock"><i class="fa fa-github"></i> View on Github</a></p>
+                    <hr/>
+                    <p>2016 - Brian Geraghty</p>
+                </div>
             </div>
         </header>
         
-        <i id="drop-toggle" class="fa fa-cog fa-3x toggle-arrow"></i>
+        <i id="drop-toggle" class="fa fa-2x"></i>
         
     </div>
 

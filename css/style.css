@@ -1,9 +1,25 @@
 body{
   background-size:cover;
   background-repeat: no-repeat;
+  overflow:hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   /**/
 }
 
+a:link, a:visited, a:hover, a:active{
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover{
+  -webkit-box-shadow: 0px 5px 0px 0px #fff;
+  -moz-box-shadow: 0px 5px 0px 0px #fff;
+  box-shadow: 0px 5px 0px 0px #fff;
+}
+ 
 .font-lato{
   font-family: 'Lato', sans-serif;
 }
@@ -20,6 +36,10 @@ body{
   font-family: 'Poiret One', cursive;
 }
 
+.font-Montserrat{
+  font-family: 'Montserrat', sans-serif;
+}
+
 header{
   position:absolute;
   top: 0px;
@@ -28,7 +48,8 @@ header{
   width: 100%;
   height:350px;
   font-size: 16px;
-  padding: 20px;
+  padding: 10px;
+  text-shadow: none;
 }
 
 header p {
@@ -51,19 +72,27 @@ header fa{
 }
 
 #drop-toggle{
+  font-family: FontAwesome;
   transition: all 1s ease;
   position: fixed;
   top:5px;
   right: 5px;
   z-index: 3;
+  -webkit-text-stroke: 1px rgba(255, 255, 255,0.8);
+}
+
+.drop-toggle-open:before{
+  content: "\f013";
   color: #fff;
+}
+
+.drop-toggle-close:before{
+  content: "\f00d";
+  color: #fff !important;
 }
 
 #drop-toggle:hover{
   cursor: pointer;
-  transform: rotate(30deg);
-  transition: all 1s ease;
-  color: #7f8c8d;
 }
 
 .header-left{
@@ -85,7 +114,7 @@ header fa{
 }
 
 .header-centre{
-  line-height: 175px;
+  line-height: 179px;
   width:33%;
   float: left;
   border-left: 1px solid #fff;
@@ -98,6 +127,22 @@ header fa{
   float: left;
   width: 33%;
   padding-left:20px;
+}
+
+.header-right-column1{
+  width: 23%;
+  float: left;
+  padding-right: 20px;
+  line-height: 70px;
+  border-right: 1px solid #fff;;
+}
+.header-right-column2{
+  float: left;
+  width:77%;
+  padding-left:20px;
+  padding-top: 110px;
+  line-height: 30px;
+  text-align: center;
 }
 
 .toggle-arrow{
@@ -118,6 +163,8 @@ header fa{
   float:left;
   color: rgba(255,255,255,0.9);
   text-shadow: 2px 2px 2px rgba(52, 73, 94,1.0);
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .time-digits{
@@ -128,7 +175,7 @@ header fa{
 
 .time-digits h1{
   line-height: 70vh;
-  font-size: 180px;
+  font-size: 160px;
 }
 
 
@@ -163,7 +210,7 @@ header fa{
 
 .date-digits{
   display: inline;
-  font-size: 60px;
+  font-size: 50px;
 }
 
 
@@ -182,7 +229,7 @@ header fa{
 @media(max-width: 768px){
   .time-digits{
     width: 12%;
-    font-size: 50px;
+    font-size: 45px;
     line-height: 70vh;
   }
   .date-digits{
@@ -197,7 +244,9 @@ header fa{
 .background-setting-wetasphalt header{
   background-color:rgba(44, 62, 80,0.8);
 }
-.background-setting-wetasphalt .time-colon{
+.background-setting-wetasphalt .time-colon, 
+.background-setting-wetasphalt .date-divide,
+.background-setting-wetasphalt .drop-toggle-open:before{
   color:rgba(44, 62, 80,0.8);
 }
 
@@ -205,7 +254,9 @@ header fa{
 .background-setting-Alizarin header{
   background-color:rgba(231, 76, 60,0.8);
 }
-.background-setting-Alizarin .time-colon{
+.background-setting-Alizarin .time-colon, 
+.background-setting-Alizarin .date-divide,
+.background-setting-Alizarin .drop-toggle-open:before{
   color:rgba(231, 76, 60,0.8);
 }
 
@@ -213,7 +264,9 @@ header fa{
 .background-setting-Turquoise header{
   background-color:rgba(26, 188, 156,0.8);
 }
-.background-setting-Turquoise .time-colon{
+.background-setting-Turquoise .time-colon, 
+.background-setting-Turquoise .date-divide,
+.background-setting-Turquoise .drop-toggle-open:before{
   color:rgba(26, 188, 156,0.8);
 }
 
@@ -221,7 +274,9 @@ header fa{
 .background-setting-Pumpkin header{
   background-color:rgba(211, 84, 0,0.8);
 }
-.background-setting-Pumpkin .time-colon{
+.background-setting-Pumpkin .time-colon, 
+.background-setting-Pumpkin .date-divide,
+.background-setting-Pumpkin .drop-toggle-open:before{
   color:rgba(211, 84, 0,0.8);
 }
 
@@ -229,6 +284,8 @@ header fa{
 .background-setting-PeterRiver header{
   background-color:rgba(52, 152, 219,0.8);
 }
-.background-setting-PeterRiver .time-colon{
+.background-setting-PeterRiver .time-colon, 
+.background-setting-PeterRiver .date-divide,
+.background-setting-PeterRiver .drop-toggle-open:before{
   color:rgba(52, 152, 219,0.8);
 }

@@ -1,18 +1,20 @@
 window.onload = function() {
 
+	$("#drop-toggle").addClass("drop-toggle-open");
 	setDate();
 
 	//Settings
+
+	if(localStorage.clockAllignment != null)
+	{
+		$("#setting-allign").val(localStorage.clockAllignment);
+		$("#clockAllign").addClass(localStorage.clockAllignment);
+	}
+
 	if(localStorage.fontFamily != null)
 	{
 		$("#setting-font-family").val(localStorage.fontFamily);
 		document.body.classList.add(localStorage.fontFamily);
-	}
-
-	if(localStorage.themeColour != null)
-	{
-		$("#setting-theme-colour").val(localStorage.themeColour);
-		document.body.classList.add(localStorage.themeColour)
 	}
 
 	if(localStorage.clockAnimation != null)
@@ -21,11 +23,10 @@ window.onload = function() {
 		$(".animated").addClass(localStorage.clockAnimation);
 	}
 
-	if(localStorage.clockAllignment != null)
+	if(localStorage.themeColour != null)
 	{
-		$("#setting-allign").val(localStorage.clockAllignment);
-		var clock = document.getElementById("clockAllign");
-		clock.classList.add(localStorage.clockAllignment);
+		$("#setting-theme-colour").val(localStorage.themeColour);
+		document.body.classList.add(localStorage.themeColour)
 	}
 
 	if(localStorage.pictureGroup != null)
@@ -48,9 +49,15 @@ $( document ).ready(function() {
 	$("#head").hide();
 	$("#drop-toggle").click(function(){
 		if($("#head").is(":hidden"))
+		{
 			$("#head").slideDown(400);
+			$("#drop-toggle").addClass("drop-toggle-close");
+		}
 		else
+		{
 			$("#head").slideUp(400);
+			$("#drop-toggle").removeClass("drop-toggle-close");
+		}
 	});
 });
 
@@ -179,12 +186,20 @@ function setBackgroundImage(image){
 }
 
 function saveSettings(){
-	setClockAllignment();
-	setFont();
-	setClockAnimation();
-	setThemeColour();
-	setPictureGroup();
-	location.reload();
+	if(document.getElementById('reset').checked)
+	{
+		//Reset Default Settings
+		//TODO
+	}
+	else
+	{
+		setClockAllignment();
+		setFont();
+		setClockAnimation();
+		setThemeColour();
+		setPictureGroup();
+		location.reload();
+	}
 };
 
 function setPictureGroup(){
