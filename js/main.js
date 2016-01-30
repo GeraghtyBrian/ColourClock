@@ -188,9 +188,11 @@ function setBackgroundImage(image){
 function saveSettings(){
 	if(document.getElementById('reset').checked)
 	{
-		//Reset Default Settings
-		//TODO
-		alert("This is not implemented yet");
+		localStorage.clockAllignment = "time-centre";
+		localStorage.fontFamily = "font-lato";
+		localStorage.clockAnimation = "flipInX";
+		localStorage.themeColour = "background-setting-Turquoise";
+		localStorage.pictureGroup = "Nature";
 	}
 	else
 	{
@@ -199,8 +201,8 @@ function saveSettings(){
 		setClockAnimation();
 		setThemeColour();
 		setPictureGroup();
-		location.reload();
 	}
+	location.reload();
 };
 
 function setPictureGroup(){
