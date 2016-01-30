@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Colour Clock</title>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -14,12 +14,12 @@
     <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 
-
+    
 </head>
 
-<body>
+<body class="">
     <div class="time-block">
-        <div id="clockAllign" class="">
+        <div id="clockAllign">
             <div id="hour1" class="time-digits animated"></div>
             <div id="hour2" class="time-digits animated"></div>
             <div class="time-digits"><h1 class="time-colon">:</h1></div>
@@ -36,32 +36,54 @@
         </div>
         <header id="head">
             <div class="header-left">
-                <div class="form-group">
-                    <p>Allign Clock</p>
-                    <select id="setting-allign"  class="form-Control">
-                       <option selected="selected" value="time-left">Left</option>
-                       <option value="time-centre">Centre (Default)</option>
-                       <option value="time-right">Right</option>
-                    </select>
+                <div class="header-left-column1">
+                    <div class="form-group">
+                        <p>Allign Clock</p>
+                        <select id="setting-allign"  class="form-Control">
+                           <option selected="selected" value="time-left">Left</option>
+                           <option value="time-centre">Centre (Default)</option>
+                           <option value="time-right">Right</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                    <p>Select Font</p>
+                        <select id="setting-font-family"  class="form-Control">
+                           <option selected="selected" value="font-lato">Lato (Default)</option>
+                           <option value="font-BreeSerif">Bree Serif</option>
+                           <option value="font-Slabo">Slabo</option>
+                           <option value="font-Poiretone">Poiret One</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <p>Select Animation</p>
+                        <select id="setting-animation"  class="form-Control">
+                            <option value="">None</option>
+                            <option selected="selected" value="flipInX">Flip In X (Default)</option>
+                            <option value="fadeIn">Fade In</option>
+                            <option value="tada">Tada</option>
+                            <option value="zoomIn">Zoom In</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="form-group">
-                <p>Select Font</p>
-                <select id="setting-font-family"  class="form-Control">
-                   <option selected="selected" value="font-lato">Lato (Default)</option>
-                   <option value="font-BreeSerif">Bree Serif</option>
-                   <option value="font-Slabo">Slabo</option>
-                   <option value="font-Poiretone">Poiret One</option>
-                </select>
-                </div>
-                <div class="form-group">
-                <p>Select Animation</p>
-                <select id="setting-animation"  class="form-Control">
-                    <option value="">None</option>
-                    <option selected="selected" value="flipInX">Flip In X (Default)</option>
-                    <option value="fadeIn">Fade In</option>
-                    <option value="tada">Tada</option>
-                    <option value="zoomIn">Zoom In</option>
-                </select>
+                <div class="header-left-column2">
+                    <div class="form-group">
+                        <p>Select Theme</p>
+                        <select id="setting-theme-colour"  class="form-Control">
+                            <option selected="selected" value="background-setting-wetasphalt">Wet Asphalt (Default)</option>
+                            <option value="background-setting-Alizarin">Alizarin</option>
+                            <option value="background-setting-Turquoise">Turquoise</option>
+                            <option value="background-setting-Pumpkin">Pumpkin</option>
+                            <option value="background-setting-PeterRiver">Peter River</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <p>Select Picture Group</p>
+                        <select id="setting-pictureGroup"  class="form-Control">
+                            <option selected="selected" value="Nature">Nature (Default)</option>
+                            <option value="Urban">Urban</option>
+                            <option value="Space">Space</option>                            
+                        </select>
+                    </div>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-warning" onclick="saveSettings()">Save</button>

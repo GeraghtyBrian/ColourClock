@@ -1,18 +1,19 @@
 window.onload = function() {
 
-	setBackgroundImage();
 	setDate();
 
 	//Settings
 	if(localStorage.fontFamily != null)
 	{
 		$("#setting-font-family").val(localStorage.fontFamily);
-		var fontFamily = localStorage.fontFamily;
-		document.body.classList.add(fontFamily);
+		document.body.classList.add(localStorage.fontFamily);
 	}
 
-	if(localStorage.background != null)
-		var background = localStorage.background;
+	if(localStorage.themeColour != null)
+	{
+		$("#setting-theme-colour").val(localStorage.themeColour);
+		document.body.classList.add(localStorage.themeColour)
+	}
 
 	if(localStorage.clockAnimation != null)
 	{
@@ -27,12 +28,20 @@ window.onload = function() {
 		clock.classList.add(localStorage.clockAllignment);
 	}
 
+	if(localStorage.pictureGroup != null)
+	{
+		$("#setting-pictureGroup").val(localStorage.pictureGroup);
+		setBackgroundImage(localStorage.pictureGroup);
+	}
+	else
+		setBackgroundImage("Nature");
+	
 	setTime();
 
 	setInterval(function (){
 		setTime();
 	}, 1000);
-	
+
 }
 
 $( document ).ready(function() {
@@ -111,7 +120,7 @@ function setDate(){
 	var dayL = date.getDay();
 	var day = date.getDate();
 	var month = date.getMonth();
-	console.log(dayL);
+
 	var dayLBlock = document.getElementById('dateDL');
 	var dayBlock = document.getElementById('dateD');
 	var monthBlock = document.getElementById('dateM');
@@ -122,27 +131,75 @@ function setDate(){
 };
 
 //Sets the current random background
-function setBackgroundImage(){
-	var imageArray = ["pic1","pic2","pic3","pic4","pic5","pic6","pic7","pic8","pic9"];
+function setBackgroundImage(image){
+
+	var imageSets = [{
+			name:"Nature",
+			dir:"Nature",
+			images: ["pic1","pic2","pic3","pic4","pic5","pic6","pic7","pic8","pic9"],
+		},
+		{
+			name:"Urban",
+			dir:"Urban",
+			images: ["pic1","pic2","pic3","pic4","pic5","pic6","pic7","pic8","pic9"],
+		},
+		{
+			name:"Space",
+			dir:"Space",
+			images: ["pic1","pic2"],
+		}
+	];
+
+	var dir = "";
+	var imageArray = "";
+
+	switch (image) {
+		case "Nature":
+			imageArray = imageSets[0].images;
+			dir = imageSets[0].dir;
+			break;
+		case "Urban":
+			imageArray = imageSets[1].images;
+			dir = imageSets[1].dir;
+			break;
+		case "Space":
+			imageArray = imageSets[2].images;
+			dir = imageSets[2].dir;
+			break;
+		default:
+			imageArray = imageSets[0].images;
+			dir = imageSets[0].dir;
+			break;
+	}
+
+	
 	var x = Math.floor((Math.random() * imageArray.length));
 
-	document.body.style.backgroundImage = "url('images/backgrounds/" + imageArray[x] + ".jpg')";
+	document.body.style.backgroundImage = "url('images/backgrounds/" + dir + "/" + imageArray[x] + ".jpg')";	
 }
 
 function saveSettings(){
 	setClockAllignment();
 	setFont();
 	setClockAnimation();
+	setThemeColour();
+	setPictureGroup();
 	location.reload();
 };
+
+function setPictureGroup(){
+	var x = document.getElementById("setting-pictureGroup");
+	localStorage.pictureGroup = x.options[x.selectedIndex].value;
+}
 
 function setFont(){
 	var x = document.getElementById("setting-font-family");
 	localStorage.fontFamily = x.options[x.selectedIndex].value;
 }
 
-function setBackground(url){
-	localStorage.background = url;
+function setThemeColour(){
+	var x = document.getElementById("setting-theme-colour");
+	localStorage.themeColour = x.options[x.selectedIndex].value;
 }
 
 function setClockAllignment(){
