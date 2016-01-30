@@ -46,7 +46,7 @@ header{
   left: 0px;
   z-index: 2;
   width: 100%;
-  height:350px;
+  height:auto;
   font-size: 16px;
   padding: 10px;
   text-shadow: none;
@@ -71,30 +71,6 @@ header fa{
   text-align: center;
 }
 
-#drop-toggle{
-  font-family: FontAwesome;
-  transition: all 1s ease;
-  position: fixed;
-  top:5px;
-  right: 5px;
-  z-index: 3;
-  -webkit-text-stroke: 1px rgba(255, 255, 255,0.8);
-}
-
-.drop-toggle-open:before{
-  content: "\f013";
-  color: #fff;
-}
-
-.drop-toggle-close:before{
-  content: "\f00d";
-  color: #fff !important;
-}
-
-#drop-toggle:hover{
-  cursor: pointer;
-}
-
 .header-left{
   width: 33%;
   float: left;
@@ -114,6 +90,7 @@ header fa{
 }
 
 .header-centre{
+  min-height: 350px;
   line-height: 179px;
   width:33%;
   float: left;
@@ -145,12 +122,31 @@ header fa{
   text-align: center;
 }
 
-.toggle-arrow{
-  position: absolute;
-  right:5px;
-  top: 5px;
-  z-index: 0;
+/*Menu Button Toggle*/
+#drop-toggle{
+  font-family: FontAwesome;
+  transition: all 1s ease;
+  position: fixed;
+  top:5px;
+  right: 5px;
+  z-index: 3;
+  -webkit-text-stroke: 1px rgba(255, 255, 255,0.8);
 }
+
+.drop-toggle-open:before{
+  content: "\f013";
+  color: #fff;
+}
+
+.drop-toggle-close:before{
+  content: "\f00d";
+  color: #fff !important;
+}
+
+#drop-toggle:hover{
+  cursor: pointer;
+}
+
 
 /*Time Styling*/
 /*--Default
@@ -223,6 +219,35 @@ header fa{
   }
   .date-digits{
     font-size: 40px;
+  }
+  .header-left{
+    width: 50%;
+  }
+  .header-centre{  
+    width:50%;
+    border-right: none;
+  }
+  .header-right{
+    width:100%;
+  }
+  .header-right-column1{
+    margin-top: 20px;;
+    width: 100%;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 1px 0px;
+    height: auto;
+    text-align: center;
+  }
+  .header-right-column1 p{
+    display: inline-block;
+    width:24%;
+  }
+  .header-right-column2{
+    float: left;
+    width:100%;
+    text-align: center;
+    padding-top: 20px;
   }
 }
 

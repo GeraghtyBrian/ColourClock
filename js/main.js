@@ -191,6 +191,7 @@ function saveSettings(){
 		//Reset Default Settings
 		//TODO
 		alert("This is not implemented yet");
+	}
 	else
 	{
 		setClockAllignment();
