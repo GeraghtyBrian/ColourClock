@@ -1,10 +1,10 @@
-window.onload = function() {
+$("#drop-toggle").addClass("drop-toggle-open");
+setDate();
 
-	$("#drop-toggle").addClass("drop-toggle-open");
-	setDate();
-
-	//Settings
-
+//Settings
+if(localStorage.themeColour == null)
+	setDefaultSettings();
+else{
 	if(localStorage.clockAllignment != null)
 	{
 		$("#setting-allign").val(localStorage.clockAllignment);
@@ -36,14 +36,13 @@ window.onload = function() {
 	}
 	else
 		setBackgroundImage("Nature");
-	
-	setTime();
-
-	setInterval(function (){
-		setTime();
-	}, 1000);
-
 }
+
+setTime();
+
+setInterval(function (){
+	setTime();
+}, 1000);
 
 $( document ).ready(function() {
 	$("#head").hide();
@@ -121,7 +120,7 @@ function setTime(){
 
 //Sets the current Date
 function setDate(){
-	var dayArray = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+	var dayArray = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 	var monthArray = ["January","Febuary","March","April","May","June","July","August","September","October","November","December"];
 	var date = new Date();
 	var dayL = date.getDay();
@@ -132,9 +131,10 @@ function setDate(){
 	var dayBlock = document.getElementById('dateD');
 	var monthBlock = document.getElementById('dateM');
 
-	dayLBlock.innerHTML = dayArray[dayL-1] + " ";
+	dayLBlock.innerHTML = dayArray[dayL] + " ";
 	dayBlock.innerHTML = day + " ";
 	monthBlock.innerHTML = monthArray[month];
+	console.log(dayL);
 };
 
 //Sets the current random background
@@ -188,11 +188,7 @@ function setBackgroundImage(image){
 function saveSettings(){
 	if(document.getElementById('reset').checked)
 	{
-		localStorage.clockAllignment = "time-centre";
-		localStorage.fontFamily = "font-lato";
-		localStorage.clockAnimation = "flipInX";
-		localStorage.themeColour = "background-setting-Turquoise";
-		localStorage.pictureGroup = "Nature";
+		setDefaultSettings();
 	}
 	else
 	{
@@ -204,6 +200,15 @@ function saveSettings(){
 	}
 	location.reload();
 };
+
+function setDefaultSettings(){
+	localStorage.clockAllignment = "time-centre";
+	localStorage.fontFamily = "font-lato";
+	localStorage.clockAnimation = "flipInX";
+	localStorage.themeColour = "background-setting-Turquoise";
+	localStorage.pictureGroup = "Nature";
+	location.reload();
+}
 
 function setPictureGroup(){
 	var x = document.getElementById("setting-pictureGroup");

@@ -15,10 +15,19 @@
     <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     
 </head>
 
-<body class="">
+<script type="text/javascript">
+    $(window).load(function() {
+        // Animate loader off screen
+        $(".se-pre-con").fadeOut("slow");
+    });
+</script>
+
+<body class="">       
+<div class="se-pre-con"></div>
     <div class="time-block">
         <div id="clockAllign">
             <div id="hour1" class="time-digits animated"></div>
@@ -48,7 +57,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                    <p>Select Font</p>
+                        <p>Select Font</p>
                         <select id="setting-font-family"  class="form-Control">
                            <option selected="selected" value="font-lato">Lato (Default)</option>
                            <option value="font-BreeSerif">Bree Serif</option>
@@ -124,7 +133,7 @@
     </div>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 

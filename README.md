@@ -1,14 +1,20 @@
 # Colour Clock
 
-> Ignore the name it doesnt do colour (yet!).
+> A simple stylish digital clock made to act as my browser homepage.
 
-A simple stylish digital clock made to act as my browser homepage.
-
-Currently only contains 3 customisable properties but more may be added in the future.
+# Customisable Settings
 
 * Clock allignment (Left, Centre, Right)
 * Clock Font
 * Clock Animation
+* Clock Colour Theme
+* Clock Background Image Category
+
+#Screen Shots
+
+![Colour Clock Screen](http://i.imgur.com/Ox4xpeI.gif "Colour Clock Screen")
+![Colour Clock Screen](http://i.imgur.com/amd3ZRD.gif "Colour Clock Screen")
+![Colour Clock Screen](http://i.imgur.com/tUG5vD5.gif "Colour Clock Screen")
 
 # Built With
 
